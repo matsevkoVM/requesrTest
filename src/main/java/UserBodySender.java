@@ -7,11 +7,10 @@ import org.apache.hc.core5.http.io.entity.StringEntity;
 
 import java.io.IOException;
 
-public class JsonSender1 {
+public class UserBodySender {
     private static String begin = "{\"id\":";
     private static String middle = "";
 
-    // Task / Change the documentId like random string. the length of string must be less than 10. generate any kind of string which contains only numbers. on every iteration. does it clear?
     private static String end = ",\n" +
             "    \"fullName\": \"კარგი კლიენტი\",\n" +
             "    \"resident\": {\n" +
@@ -65,11 +64,11 @@ public class JsonSender1 {
     }
 
     public static void setMiddle(String middle) {
-        JsonSender1.middle = middle;
+        UserBodySender.middle = middle;
     }
 
     public static void setDocumentId(String documentId) {
-        JsonSender1.documentId = documentId;
+        UserBodySender.documentId = documentId;
     }
 
     public static CloseableHttpResponse getResponse() {

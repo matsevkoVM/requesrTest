@@ -4,6 +4,7 @@ public class JsonBody {
     public JsonBody(String body){
         this.body = body;
     }
+    public JsonBody(){}
 
     public String getBody() {
         return body;
