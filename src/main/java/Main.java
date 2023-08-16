@@ -8,9 +8,15 @@ public class Main {
 
         ExecutorService executor = Executors.newFixedThreadPool(10);
 
-            for (int i = 0; i < 10; i++) {
-                executor.execute(new Requests());
-            }
+        long startTime = System.currentTimeMillis();
+        long endTime = startTime + 10 * 60 * 60 * 1000;
+
+        while (System.currentTimeMillis() < endTime) {
+            executor.execute(new Requests());
+        }
         executor.shutdown();
+
+        System.out.println("Loop finished after 10 hours.");
     }
+
 }

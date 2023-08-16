@@ -25,7 +25,7 @@ public class Requests implements Runnable {
     }
 
     private int tryToRunTransactionBodySender(){
-        for (int i = 0; i < 100; i++) {
+        for (int i = 0; i < 5; i++) {
             UUID uid = UUID.randomUUID();
             TransactionBodySender.setMiddle("\"" + uid + "\"");
             TransactionBodySender.send(token);
@@ -40,7 +40,7 @@ public class Requests implements Runnable {
 
         System.out.println("Time executed for transactions: " + (transactionExecuteTime - currentTime));
 
-        for (int i = 0; i < 100; i++) {
+        for (int i = 0; i < 5; i++) {
             UUID uid = UUID.randomUUID();
             UserBodySender.setMiddle("\"" + uid + "\"");
             UserBodySender.setDocumentId("\"" + generateId() + "\"");
